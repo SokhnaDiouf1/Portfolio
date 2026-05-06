@@ -1,0 +1,1083 @@
+/* =========================================
+   1. Styles Généraux 
+   ========================================= */
+html { scroll-behavior: smooth;}
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding-top: 4.5rem; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   2. En-tête et Navigation
+   ========================================= */
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00bcd4; 
+    border-bottom: 2px solid #00bcd4;
+}
+
+/* =========================================
+   3. L'accueil en haut
+   ========================================= */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/fond.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 60vh; /* Hauteur sur mobile */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 90%;
+}
+
+.hero .name {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.hero .tagline {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #eee;
+}
+
+/* =========================================
+   4. Section À propos
+   ========================================= */
+.about-section {
+    padding: 4rem 0;
+    background-color: #e6f1fe; 
+}
+
+/* Base Mobile-First pour À propos */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto; 
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #1A237E; 
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.about-text p {
+    font-size: 1.2rem; 
+    color: #555;
+    line-height: 1.9; 
+    margin-bottom: 2rem; 
+}
+
+.btn-link {
+    display: inline-block;
+    font-size: 1.15rem; 
+    font-weight: 600;
+    color: #1A237E; 
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #00bcd4;
+}
+
+/* =========================================
+   5. Media Queries (Tablette et PC)
+   ========================================= */
+@media (min-width: 768px) {
+    /* Menu Navigation */
+    .nav-links {
+        gap: 2rem;
+    }
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Section Hero */
+    .hero {
+        height: 90vh;
+    }
+    .hero .name {
+        font-size: 5rem;
+    }
+    .hero .tagline {
+        font-size: 1.4rem;
+    }
+
+    /* Section À propos */
+    .about-section {
+        padding: 6rem 0;
+    }
+    .about-container {
+        flex-direction: row; 
+        align-items: center;  
+        justify-content: space-between;
+        gap: 3rem;
+    }
+    .about-image {
+        flex: 0 0 45%; 
+    }
+    .about-text {
+        flex: 0 0 50%; 
+    }
+    .about-text h2 {
+        font-size: 3.5rem;
+    }
+}
+/* =========================================
+   6. Pied de page
+   ========================================= */
+footer {
+    background-color: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}
+/* =========================================
+   7. Section Call to Action 
+   ========================================= */
+.cta-section {
+    background-color: #0A36ED;
+    color: #ffffff;
+    padding: 4rem 0;
+}
+
+.cta-container {
+    max-width: 1000px; 
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 2.5rem;
+}
+
+
+.btn-primary {
+    display: inline-block;
+    background-color: #FFB300;
+    color: #111; 
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+
+.btn-primary:hover {
+    background-color: #FFA000; 
+    color: #000;
+    transform: translateY(-3px); 
+}
+
+/* =========================================
+   8. Media Queries pour la section Bleue
+   ========================================= */
+@media (min-width: 768px) {
+    .cta-section {
+        padding: 6rem 0;
+    }
+    
+    .cta-section h2 {
+        font-size: 3rem; 
+        max-width: 90%;
+    }
+}
+/* =========================================
+   9. Section Citation
+   ========================================= */
+.quote-section {
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/iMe.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quote-icon {
+    font-size: 6rem;
+    font-family: serif;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 0.5;
+    margin-top: 2rem;
+}
+
+.quote-text blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.quote-text cite {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFB300; 
+}
+
+/* =========================================
+   10. Footer & Animations CSS
+   ========================================= */
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #FFB300;
+    transform: translateY(-5px) scale(1.1); 
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+
+}
+/* Style de la ligne de séparation du footer */
+.footer-separator {
+    width: 50%; 
+    max-width: 300px; 
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.5); 
+    margin: 0.5rem 0; 
+}
+
+/* =========================================
+   11. Bouton Scroll to Top 
+   ========================================= */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0A36ED;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
+
+.scroll-top:hover {
+    background-color: #FFB300;
+    color: #111;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   12. Media Queries (Tablette et PC)
+   ========================================= */
+@media (min-width: 768px) {
+    .quote-section {
+        padding: 6rem 0;
+    }
+    
+    .quote-container {
+        flex-direction: row;  
+        justify-content: center;
+        text-align: left;
+        gap: 3rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .quote-icon {
+        font-size: 10rem;
+        margin-top: 0;
+    }
+
+    .quote-text blockquote {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   13. Page "À propos" (about.html)
+/* =========================================
+    /* Hero spécifique à la page About */
+
+.hero-about {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/fondAbout.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 55vh; 
+    display: flex;
+    align-items: center;
+  
+}
+
+
+.hero-about .container {
+    width: 100%;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: left;  
+}
+
+.hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 15px 0 0 0; 
+}
+
+.about-page-wrapper {
+    background-color: #E6F1FE;
+    padding: 3rem 0;
+}
+
+/* --- Section Profil & Description --- */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Titre : Mon Profil */
+.title-blue-small {
+    color: #1A237E; 
+    font-size: 1.1rem; 
+    text-transform: uppercase; 
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Titre : Description personnelle  */
+.title-dark-large {
+    color: #222222; 
+    font-size: 2.5rem; 
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.profile-column p {
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Le Séparateur  */
+.about-separator {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 3rem 0;
+}
+
+/* Section Parcours Académique  */
+.section-title {
+    color: #222222; 
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.education-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    background-color: #dbe2f9;
+    color: #1A237E;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #1A237E;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1; 
+}
+
+.card-body ul {
+    list-style-type: none;
+}
+
+.card-body li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.card-body li::before {
+    content: "■";
+    color: #1A237E;
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   14. Media Queries Page "À propos" (PC/Tablette)
+   ========================================= */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .profile-container {
+        flex-direction: row; 
+        gap: 4rem;
+    }
+
+    .profile-column {
+        flex: 1; 
+    }
+
+    .column-title {
+        font-size: 2rem;
+    }
+
+    .education-container {
+        flex-direction: row; 
+        align-items: stretch; 
+        gap: 2rem;
+    }
+
+    .education-card {
+        flex: 1; 
+    }
+}
+
+/* =========================================
+   15. Section Compétences (Barres de progression)
+   ========================================= */
+.skills-section {
+    padding: 2rem 0 4rem 0; 
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+    max-width: 900px; 
+}
+
+.skill-box {
+    width: 100%;
+}
+
+
+.skill-bar-bg {
+    background-color: #f1ecf1; 
+    border-radius: 50px; 
+    height: 45px;
+    width: 100%;
+    overflow: hidden; 
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+
+.skill-bar-fill {
+    background-color: #1A237E; 
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    
+    /* ANIMATION CSS */
+    width: 0; 
+    animation: fillBar 1.5s ease-out 1.5s forwards; 
+}
+
+/* Définition de l'animation CSS */
+@keyframes fillBar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: var(--target-width); 
+    }
+}
+
+/* =========================================
+   16. Page "Galerie / Projets" (gallery.html)
+   ========================================= */
+
+/* Hero de la Galerie */
+.hero-gallery {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('../images/gallery.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 75vh; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+/* --- LE TITRE GALLERY --- */
+.hero-gallery .hero-title {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: left !important; /* l'alignement à gauche */
+    margin: 0 !important; 
+    padding-bottom: 20px; 
+}
+
+/* TRAIT BLANC */
+.hero-gallery .hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 15px 0 0 0 !important; 
+}
+/*force le conteneur de la galerie à s'aligner à gauche */
+.hero-gallery .container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Bannières noires "Projets" et "Certifications" */
+.section-banner {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 2rem 0;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.banner-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Section des Projets */
+.projects-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+}
+
+/* Structure mobile pour un projet  */
+.project-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.project-number {
+    color: #1A237E;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.project-title {
+    color: #222;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.project-text-content p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Les photos des projets */
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Section Certifications --- */
+.certifications-section {
+    padding: 4rem 0;
+    background-color: #f1ecf1;
+}
+
+.certifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cert-card {
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+}
+
+/* L'image au-dessus de la certification */
+.cert-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cert-title {
+    color: #1A237E;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.cert-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- Section Événements --- */
+.events-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.events-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.event-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.event-image {
+    width: 100%;
+    height: 250px; /* Force toutes les photos à avoir la même hauteur */
+    object-fit: cover; 
+}
+
+.event-title {
+    color: #1A237E;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    margin: 0;
+}
+
+/* --- Distinctions & Honneurs --- */
+.distinctions-banner {
+    background-color: #1a1a1a; 
+}
+
+.distinctions-section {
+    padding: 5rem 0;
+    background-color: #f1ecf1; 
+}
+
+.distinctions-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 3rem;
+}
+
+.distinctions-image-container {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+}
+
+.distinctions-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+}
+
+.distinctions-text-container {
+    flex: 1.5; 
+}
+
+.distinctions-text-container h3 {
+    color: #1A237E; 
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.distinctions-text-container p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   17. Media Queries Galerie (Tablette et PC)
+   ========================================= */
+@media (min-width: 768px) {
+    /* L'alignement des projets côte à côte sur PC */
+    .project-row {
+        flex-direction: row;
+        align-items: center; 
+        gap: 4rem;
+    }
+    
+    /* Inversion de la disposition pour le projet 2 */
+    .project-row.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .project-text-content {
+        flex: 1; 
+    }
+
+    .project-image {
+        flex: 1; 
+    }
+
+    .project-title {
+        font-size: 2.2rem;
+    }
+
+    /* Alignement des 3 certifications côte à côte */
+    .certifications-container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .cert-card {
+        flex: 1; 
+    }
+    .events-container {
+        flex-direction: row;
+    }
+    .event-card {
+        flex: 1;
+    }
+    .distinctions-wrapper {
+        flex-direction: row; 
+        align-items: flex-start; 
+        gap: 5rem; 
+    }
+}
+
+/* =========================================
+   18. Page "Contact" (contact.html)
+   ========================================= */
+
+/* Hero de Contact  */
+.hero-contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('../images/fondcontact.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-contact .container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.hero-contact .hero-title {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: left !important;
+    margin: 0 !important;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.hero-contact .hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 15px 0 0 0 !important;
+}
+
+/* --- Section du Formulaire et des Infos --- */
+.contact-section {
+    padding: 5rem 0;
+    background-color: #f4f4f4;
+}
+
+/* Le grand conteneur */
+.contact-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 3rem;
+}
+
+/* Colonne Informations */
+.contact-info {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-info h2 {
+    color: #1A237E;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.info-list a {
+    color: #1A237E;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-list a:hover {
+    text-decoration: underline;
+}
+
+/* Colonne Formulaire */
+.contact-form-wrapper {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #1A237E; /* La bordure devient bleue quand on clique dedans */
+}
+
+.btn-submit {
+    background-color: #1A237E;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #121858;
+    transform: translateY(-2px); /* Petit effet de soulèvement au survol */
+}
+
+/* Media Query : Écrans d'ordinateur  */
+@media (min-width: 768px) {
+    .contact-container {
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    /* Chaque colonne prend 50% de l'espace*/
+    .contact-info {
+        flex: 1;
+    }
+
+    .contact-form-wrapper {
+        flex: 1;
+    }
+}
