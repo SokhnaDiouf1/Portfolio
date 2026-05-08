@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos - Sokhna DIOUF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -12,12 +13,13 @@
         <nav class="navbar">
             <div class="container nav-container">
                 <a href="../index.html" class="logo">S-TRADE-TECH</a>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="burger" id="burgerMenu">☰</div>
             </div>
         </nav>
     </header>
@@ -153,13 +155,13 @@
         <div class="container footer-container">
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/SokhnaD" target="_blank" aria-label="LinkedIn">
-                    <img src="../images/link.jpeg" alt="LinkedIn" class="social-icon">
+                    <i class="fab fa-linkedin social-icon"></i>
                 </a>
                 <a href="https://github.com/SokhnaDiouf1" target="_blank" aria-label="GitHub">
-                    <img src="../images/github.jpeg" alt="GitHub" class="social-icon">
+                    <i class="fab fa-github social-icon"></i>
                 </a>
                 <a href="mailto:diouf.sokhna4@uam.edu.sn" aria-label="Email">
-                    <img src="../images/mail.jpeg" alt="Email" class="social-icon">
+                    <i class="fas fa-envelope social-icon"></i>
                 </a>
             </div>
             <hr class="footer-separator">
@@ -168,6 +170,30 @@
     </footer>
 
     <a href="#" class="scroll-top" aria-label="Remonter en haut">&#9650;</a>
-
+        <script>
+              // Observer pour déclencher le remplissage des barres quand la section est visible
+            const skillsSection = document.querySelector('.skills-section');
+            const skillBars = document.querySelectorAll('.skill-bar-fill');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Ajoute la classe .animate à toutes les barres
+                        skillBars.forEach(bar => bar.classList.add('animate'));
+                        // Optionnel : stopper l'observation une fois déclenché (pour ne pas répéter)
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 }); // Se déclenche quand 30% de la section est visible
+            if (skillsSection) {
+                observer.observe(skillsSection);
+            }
+        </script>
+        <script>
+        const burger = document.getElementById('burgerMenu');
+        const nav = document.getElementById('navLinks');
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
