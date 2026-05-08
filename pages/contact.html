@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Sokhna DIOUF</title>
+    <title>Galerie et Projets - Sokhna DIOUF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -12,75 +13,168 @@
         <nav class="navbar">
             <div class="container nav-container">
                 <a href="../index.html" class="logo">S-TRADE-TECH</a>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="burger" id="burgerMenu">☰</div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero-contact">
+        <section class="hero-gallery">
             <div class="container">
-                <h1 class="hero-title">Contact</h1>
+                <h1 class="hero-title">Gallery</h1>
             </div>
         </section>
 
-        <section class="contact-section">
-            <div class="container contact-container">
+        <div class="section-banner">
+            <div class="container banner-content">
+                <img src="../images/iconeprojet.jpeg" alt="Icone Projets" class="banner-icon">
+                <h2>Projets</h2>
+            </div>
+        </div>
+
+        <section class="projects-section">
+            <div class="container">
                 
-                <div class="contact-info">
-                    <h2>Travaillons ensemble !</h2>
-                    <p>N'hésitez pas à me contacter pour toute question, opportunité ou simplement pour échanger autour de la technologie et de l'innovation.</p>
-                    
-                    <ul class="info-list">
-                        <li>
-                            <strong>📍 Adresse :</strong> Dakar, Sénégal
-                        </li>
-                        <li>
-                            <strong>📧 Email :</strong> diouf.sokhna4@uam.edu.sn
-                        </li>
-                        <li>
-                            <strong>💼 LinkedIn :</strong> <a href="https://www.linkedin.com/in/SokhnaD" target="_blank">Mon Profil</a>
-                        </li>
-                    </ul>
+                <div class="project-row">
+                    <div class="project-text-content">
+                        <span class="project-number">01</span>
+                        <h3 class="project-title">Système intelligente et Gestion Automatique des Emploi du Temps Universitaire (SIGET)</h3>
+                        <p>Ce projet est né d'un constat concret sur mon campus : les difficultés récurrentes liées aux conflits de salles et aux chevauchements d'horaires. J'ai donc entrepris de concevoir une application web dédiée à la centralisation et à l'organisation des emplois du temps. Actuellement, la structure de la base de données et l'interface utilisateur sont opérationnelles. Le projet est en cours de développement, avec pour objectif final l'intégration d'un algorithme d'automatisation intelligente pour résoudre dynamiquement les contraintes logistiques.</p>
+                    </div>
+                    <div class="project-image">
+                        <img src="../images/projet1.jpeg" alt="Projet SIGET">
+                    </div>
                 </div>
 
-                <div class="contact-form-wrapper">
-                    <form action="#" class="contact-form">
-                        <div class="input-group">
-                            <label for="name">Nom complet</label>
-                            <input type="text" id="name" name="name" placeholder="Votre nom..." required>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label for="email">Adresse Email</label>
-                            <input type="email" id="email" name="email" placeholder="Votre adresse email..." required>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label for="message">Votre Message</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Écrivez votre message ici..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-submit">Envoyer le message</button>
-                    </form>
+                <div class="project-row reverse">
+                    <div class="project-text-content">
+                        <span class="project-number">02</span>
+                        <h3 class="project-title">SD Smart Studio</h3>
+                        <p>SD Smart Studio est une solution basée sur une architecture multi-agents (IA agentique) conçue pour automatiser la création de contenu digital. Le système intègre plusieurs modules autonomes spécialisés, notamment la génération d'idées, la rédaction de textes, la conception d'affiches visuelles et la préparation de publications prêtes à être diffusées sur les réseaux sociaux. Grâce à une orchestration intelligente des agents, la plateforme est capable de produire rapidement des contenus cohérents, adaptés au contexte et optimisés pour la communication digitale.</p>
+                    </div>
+                    <div class="project-image">
+                        <img src="../images/projet2.jpeg" alt="Projet SD Smart Studio">
+                    </div>
                 </div>
 
             </div>
+        </section>
+
+        <div class="section-banner">
+            <div class="container banner-content">
+                <img src="../images/iconecertificat.jpeg" alt="Icone Certifications" class="banner-icon">
+                <h2>Certifications</h2>
+            </div>
+        </div>
+
+        <section class="certifications-section">
+            <div class="container certifications-container">
+                
+                <div class="cert-card">
+                    <img src="../images/CertificatElementofIA.jpeg" alt="Certification Element of IA" class="cert-image">
+                    <h3 class="cert-title">Elements of AI</h3>
+                    <p>Certification internationale délivrée par l'Université d'Helsinki et MinnaLearn. Maîtrise des fondamentaux théoriques de l'Intelligence Artificielle, des algorithmes et de leurs impacts sociétaux.</p>
+                </div>
+
+                <div class="cert-card">
+                    <img src="../images/Certificat3D.jpeg" alt="Formation 3D" class="cert-image">
+                    <h3 class="cert-title">Formation 3D</h3>
+                    <p>Passage du virtuel au réel : Maîtrise des processus de modélisation et d'impression tridimensionnelle. Une formation technique acquise à Orange Digital Center pour transformer des concepts numériques en prototypes physiques.</p>
+                </div>
+
+                <div class="cert-card">
+                    <img src="../images/CertificatDevWEB.jpeg" alt="Développement Web" class="cert-image">
+                    <h3 class="cert-title">Développement Web</h3>
+                    <p>Formation intensive en Développement Web réalisée à l'Orange Digital Center (Sonatel). Acquisition de compétences pratiques en création de sites web.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="section-banner">
+            <div class="container banner-content">
+                <h2>Événements & Participations</h2>
+            </div>
+        </div>
+
+        <section class="events-section">
+            <div class="container events-container">
+                
+                <div class="event-card">
+                    <img src="../images/universalon.jpeg" alt="Universalon 2025" class="event-image">
+                    <h3 class="event-title">Universalon 2025 - UAM</h3>
+                </div>
+
+                <div class="event-card">
+                    <img src="../images/odc.jpeg" alt="ODC-UAM Formation 3D" class="event-image">
+                    <h3 class="event-title">ODC-UAM Formation 3D</h3>
+                </div>
+
+                <div class="event-card">
+                    <img src="../images/galsenAI.jpeg" alt="GalsenAI" class="event-image">
+                    <h3 class="event-title">GalsenAI</h3>
+                </div>
+
+            </div>
+        </section>
+        <div class="section-banner distinctions-banner">
+            <div class="container banner-content">
+                <h2>Distinctions & Honneurs</h2>
+            </div>
+        </div>
+
+        <section class="distinctions-section">
+            <div class="container distinctions-container">
+                
+                <div class="distinctions-wrapper">
+                    
+                    <div class="distinctions-image-container">
+                        <img src="../images/prix2022.jpeg" alt="Sokhna Diouf - Prix de l'Excellence 2022" class="distinctions-image">
+                    </div>
+
+                    <div class="distinctions-text-container">
+                        <h3>Prix de l'Excellence - Dakar, 2022</h3>
+                        <p>
+                            Un moment inoubliable : j'ai eu l'honneur d'être reconnue parmi les meilleurs élèves de la région de Dakar lors de la Fête de l'Excellence 2022. Cette distinction célèbre l'engagement et l'excellence académique, et reste une motivation quotidienne pour dépasser mes limites.
+                        </p>
+                    </div>
+                    
+                </div> </div>
         </section>
     </main>
 
     <footer>
         <div class="container footer-container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/SokhnaD" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin social-icon"></i>
+                </a>
+                <a href="https://github.com/SokhnaDiouf1" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github social-icon"></i>
+                </a>
+                <a href="mailto:diouf.sokhna4@uam.edu.sn" aria-label="Email">
+                    <i class="fas fa-envelope social-icon"></i>
+                </a>
+            </div>
+            <hr class="footer-separator">
             <p>&copy; 2026 Sokhna Diouf - Tous droits réservés</p>
         </div>
     </footer>
 
     <a href="#" class="scroll-top" aria-label="Remonter en haut">&#9650;</a>
+    <script>
+        const burger = document.getElementById('burgerMenu');
+        const nav = document.getElementById('navLinks');
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
