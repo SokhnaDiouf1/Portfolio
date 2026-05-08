@@ -115,6 +115,48 @@ header {
     color: #eee;
 }
 
+.typewriter {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #eee;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  border-right: 3px solid #FFB300;   /* le curseur */
+  width: 0;
+  animation: typing 4s steps(60, end) forwards,
+             blink 0.8s step-end infinite;
+}
+
+/* L'écriture */
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* Le clignotement du curseur */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Taille plus grande sur PC */
+@media (min-width: 768px) {
+  .typewriter {
+    font-size: 1.6rem;
+  }
+}
+
+
+@keyframes scrollText {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes scrollText2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 /* =========================================
    4. Section À propos
    ========================================= */
@@ -204,6 +246,9 @@ header {
     }
     .about-text h2 {
         font-size: 3.5rem;
+    }
+    .marquee span {
+        font-size: 1.4rem;
     }
 }
 /* =========================================
@@ -347,9 +392,14 @@ footer p {
     color: #aaa;
 }
 .social-icon {
-    width: 40px;
-    height: 40px;
+    font-size: 2rem;  /* Taille de l'icône, ajuste selon ton besoin */
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
 
+.social-links a:hover .social-icon {
+    color: #FFB300;
+    transform: translateY(-5px) scale(1.1);
 }
 /* Style de la ligne de séparation du footer */
 .footer-separator {
@@ -586,6 +636,9 @@ footer p {
 /* =========================================
    15. Section Compétences (Barres de progression)
    ========================================= */
+/* =========================================
+   15. Section Compétences (Barres de progression)
+   ========================================= */
 .skills-section {
     padding: 2rem 0 4rem 0; 
 }
@@ -601,7 +654,6 @@ footer p {
     width: 100%;
 }
 
-
 .skill-bar-bg {
     background-color: #f1ecf1; 
     border-radius: 50px; 
@@ -610,7 +662,6 @@ footer p {
     overflow: hidden; 
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
-
 
 .skill-bar-fill {
     background-color: #1A237E; 
@@ -623,20 +674,13 @@ footer p {
     color: #ffffff;
     font-weight: 600;
     font-size: 0.95rem;
-    
-    /* ANIMATION CSS */
-    width: 0; 
-    animation: fillBar 1.5s ease-out 1.5s forwards; 
+    width: 0; /* Commence à 0 */
+    transition: width 1.5s ease-out; /* Transition JS-friendly */
 }
 
-/* Définition de l'animation CSS */
-@keyframes fillBar {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: var(--target-width); 
-    }
+/* Quand la classe .animate est ajoutée par JS, la largeur cible est appliquée */
+.skill-bar-fill.animate {
+    width: var(--target-width);
 }
 
 /* =========================================
@@ -1080,4 +1124,95 @@ footer p {
     .contact-form-wrapper {
         flex: 1;
     }
+}
+
+/* Burger menu (mobile) */
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  /* Rendre le conteneur parent positionné pour le menu absolu */
+  .nav-container {
+    position: relative;
+  }
+
+  /* Afficher le burger */
+  .burger {
+    display: block;
+  }
+
+  /* Menu masqué par défaut, positionné en dessous du header */
+  @media (max-width: 767px) {
+  /* Burger */
+  .burger {
+    display: block;
+  }
+
+  /* Menu - positionné en dehors du flux, par-dessus tout */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    background-color: #1a1a1a;
+    position: fixed;        /* Fixé sur l'écran, ne pousse rien */
+    top: 60px;              /* Juste en dessous du header */
+    right: 15px;
+    z-index: 2000;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    padding: 0.5rem 0;
+    
+    /* Caché par défaut */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  /* Quand actif, on le rend visible */
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+    color: #fff;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
+  .nav-links a {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+  /* Sur mobile : annuler l'effet typewriter, afficher le texte normalement */
+  .typewriter {
+    animation: none;
+    white-space: normal;
+    width: auto;
+    border-right: none;
+    overflow: visible;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+
 }
