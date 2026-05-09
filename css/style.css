@@ -1213,14 +1213,19 @@ footer p {
     margin: 0 auto;
     max-width: 90%;
   }
-  @media (max-width: 767px) {
+ 
   /* Titres de section */
   .section-title {
     font-size: 1.6rem !important;
     word-wrap: break-word;
     text-align: center;
   }
-
+   /* Correction image de fond sur iOS */
+   .hero {
+      background-attachment: scroll; /* Annule le fixed sur mobile */
+      background-position: center center;
+      background-size: cover;
+}
   /* Cartes événements */
   .event-title {
     font-size: 1rem !important;
@@ -1231,7 +1236,7 @@ footer p {
   .event-card {
     margin-bottom: 1rem;
   }
-} 
+ 
 
 
 }
